@@ -107,4 +107,5 @@ public interface CheckEntityService {
     void checkExistNotificationsById(Long notificationsId);
 
     void checkExistSelectorById(Long selectorId);
+
 }

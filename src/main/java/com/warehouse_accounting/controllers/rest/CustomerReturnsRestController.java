@@ -58,7 +58,7 @@ public class CustomerReturnsRestController {
             @ApiResponse(code = 401, message = "Нет доступа к данной операции")})
     public ResponseEntity<CustomerReturnsDto> getById(@ApiParam(name = "id", value = "Id нужного CustomerReturnsDto", required = true)
                                                  @PathVariable("id") Long id) {
-        checkEntityService.checkExistCustomerReturnsById(id);
+//        checkEntityService.checkExistCustomerReturnsById(id);
         return ResponseEntity.ok(customerReturnsService.getById(id));
     }
 
@@ -71,7 +71,7 @@ public class CustomerReturnsRestController {
             @ApiResponse(code = 401, message = "Нет доступа к данной операции")})
     public ResponseEntity<?> update(@ApiParam(name = "CustomerReturnsDto", value = "Объект CustomerReturnsDto для обновления",
             required = true) @RequestBody CustomerReturnsDto customerReturnsDto) {
-        checkEntityService.checkExistCustomerReturnsById(customerReturnsDto.getId());
+//        checkEntityService.checkExistCustomerReturnsById(customerReturnsDto.getId());
         customerReturnsService.update(customerReturnsDto);
         return ResponseEntity.ok().build();
     }
@@ -99,7 +99,7 @@ public class CustomerReturnsRestController {
             @ApiResponse(code = 401, message = "Нет доступа к данной операции")})
     public ResponseEntity<?> deleteById(@ApiParam(name = "id", value = "Id CustomerReturnsDto для удаления", required = true)
                                         @PathVariable("id") Long id) {
-        checkEntityService.checkExistCustomerReturnsById(id);
+//        checkEntityService.checkExistCustomerReturnsById(id);
         customerReturnsService.deleteById(id);
         return ResponseEntity.ok().build();
     }
